@@ -37,7 +37,6 @@
           <option value="erase">Sil</option>
         </select>
         <button id="saveBtn">PNG İndir</button>
-        <button id="clearBackground" class="small">Arka Plan Beyaz</button>
       </div>
 
       <div id="canvasWrap">
@@ -56,7 +55,6 @@
     const colorPicker = document.getElementById('colorPicker');
     const sizeRange = document.getElementById('sizeRange');
     const mode = document.getElementById('mode');
-    const clearBackground = document.getElementById('clearBackground');
 
     let drawing = false;
     let currentStroke = null;
@@ -193,10 +191,6 @@
       a.remove();
     });
 
-    clearBackground.addEventListener('click', ()=>{
-      strokes.push({color:'#ffffff', size:canvas.width, mode:'draw', points:[{x:0,y:0},{x:canvas.width,y:canvas.height}]});
-      redraw();
-    });
 
     // Initialize
     setCanvasSize();
